@@ -5,6 +5,11 @@ import Router from 'vue-router';
 import Home from '@/views/Home.vue';
 import Login from '@/views/Login.vue';
 import SignUp from '@/views/SignUp.vue';
+import Recipes from '@/views/Recipes.vue';
+
+import showRecipes from '@/components/showRecipes.vue';
+import addRecipes from '@/components/addRecipes.vue'
+import singleRecipes from '@/components/singleRecipe.vue';
 
 Vue.use(Router);
 
@@ -29,9 +34,25 @@ const router = new Router({
       component: SignUp
     },
     {
+      path: '/recipe/:id',
+      name: 'singlerecipe',
+      component: singleRecipes,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/addrecipe',
+      name: 'addrecipe',
+      component: addRecipes,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/home',
-      name: 'home',
-      component: Home,
+      name: 'recipes',
+      component: Recipes,
       meta: {
         requiresAuth: true
       }
@@ -49,4 +70,5 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router;
+
 

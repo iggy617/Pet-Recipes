@@ -4,6 +4,8 @@ import firebase from 'firebase';
 import 'firebase/firestore';
 import App from './App.vue';
 import router from './router';
+import VueResource from 'vue-resource';
+
 
 Vue.config.productionTip = false;
 
@@ -27,5 +29,19 @@ firebase.auth().onAuthStateChanged(() => {
     }).$mount('#app');
   }
 });
+
+Vue.use(VueResource);
+
+// Filters 
+
+Vue.filter('to-uppercase', function(value){
+  return value.toUpperCase();
+});
+
+Vue.filter('snippet', function(value){
+  return value.slice(0,100) + '...';
+});
+
+
 
 export const db = firebase.firestore()

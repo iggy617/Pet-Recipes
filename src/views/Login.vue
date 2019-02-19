@@ -1,8 +1,10 @@
 <template>
  <div class="login">
  <h3>Sign In</h3>
- <input type="text" v-model="email" placeholder="Email"><br>
- <input type="password" v-model="password" placeholder="Password"><br>
+ <input type="text" v-model="email" placeholder="Email">
+   <br>
+ <input type="password" v-model="password" placeholder="Password">
+   <br>
  <button @click="login">Login</button>
 <p>Don't have an account on Pet Recipes? You can <router-link to="/sign-up">Create one!</router-link></p>
 </div>
@@ -48,6 +50,7 @@
     margin-top: 20px;
     width: 10%;
     cursor: pointer;
+    text-align: center;
   }
   
   p {

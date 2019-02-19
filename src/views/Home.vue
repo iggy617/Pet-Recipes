@@ -1,19 +1,18 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Cats & Dogs"/>
-    <button @click="logout">Logout</button>
+    <addRecipes/>
   </div>
 </template>
 
 <script>
+  // @ is an alias to /src
 import firebase from 'firebase';
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import addRecipes from '@/components/addRecipes.vue'
 
 export default {
-  name: 'home',
+  name: 'addRecipes',
   components: {
-    HelloWorld
+    addRecipes
   },
   methods: {
     logout: function() {
@@ -24,3 +23,4 @@ export default {
   }
 }
 </script>
+
