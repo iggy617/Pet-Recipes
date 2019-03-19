@@ -7,12 +7,12 @@
 <script>
   // @ is an alias to /src
 import firebase from 'firebase';
-import addRecipes from '@/components/addRecipes.vue'
+import BoardList from '@/components/BoardList.vue'
 
 export default {
-  name: 'addRecipes',
+  name: 'BoardList',
   components: {
-    addRecipes
+    BoardList
   },
   methods: {
     logout: function() {

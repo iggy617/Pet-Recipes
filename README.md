@@ -1,4 +1,4 @@
-# firebase-tutorial
+# vue-firestore
 
 ## Project setup
 ```

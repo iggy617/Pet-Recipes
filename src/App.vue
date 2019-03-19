@@ -4,7 +4,8 @@
     <nav>
       <ul>
   <li><router-link to="/home">Home</router-link></li>
-  <li><router-link to="/addrecipe">Add A New Recipe</router-link></li>
+  <li><router-link to="/add-board">Add A New Recipe</router-link></li>
+  <li><button @click="logout">Logout</button></li>
       </ul>  
 </nav>
 
@@ -12,6 +13,21 @@
   </div>
 </template>
 
+
+<script>
+  // @ is an alias to /src
+import firebase from 'firebase';
+
+export default {
+  methods: {
+    logout: function() {
+      firebase.auth().signOut().then(() => {
+        this.$router.replace('login')
+      })
+    }
+  }
+}
+</script>
 
 
 <style scoped>
